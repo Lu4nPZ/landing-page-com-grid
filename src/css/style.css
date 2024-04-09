@@ -1,0 +1,267 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "cabecalho cabecalho cabecalho cabecalho"
+                         "inicio inicio inicio inicio"
+                         "sobre sobre sobre sobre"
+                         "servicos servicos servicos servicos"
+                         "projetos projetos projetos projetos"
+                         "rodape rodape rodape rodape";
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cabecalho{
+    grid-area: cabecalho;
+}
+
+.cabecalho .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    min-height: 70px;
+}
+
+.cabecalho .container h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+}
+
+.cabecalho .container h1:hover{
+    color: coral;
+}
+
+.inicio{
+    grid-area: inicio;
+    background: url(../images/lemons.jpg) center center no-repeat;
+    background-size: cover;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inicio::after{
+    content: url(../images/seta_preta.png);
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes downarrow{
+    0%{
+        -webkit-transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    100%{
+        -webkit-transform: translateY(0.4rem);
+        opacity: 0.9;
+    }
+}
+
+.inicio h2{
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@media(max-width: 425px){
+    .inicio h2{
+        font-size: 2.5rem;
+    }
+}
+
+.sobre{
+    grid-area: sobre;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: var(--max-width-size);
+    margin: 0 auto;
+}
+
+.sobre .infos{
+    padding: 20%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.sobre .infos h3{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.sobre .infos p{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 30px 0;
+}
+
+.sobre .infos .btn-saiba-mais{
+    font-size: 1.6rem;
+    align-self: flex-start;
+    transition: 0.3s ease-in-out;
+}
+
+.sobre .infos .btn-saiba-mais:hover{
+    font-weight: 700;
+}
+
+.sobre .imagem{
+    width: 100%;
+    height: 100%;
+}
+
+.sobre .imagem.direita{
+    background: url(../images/bridge.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.sobre .imagem.esquerda{
+    background: url(../images/sky.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+@media(max-width: 425px){
+    .sobre{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .sobre .infos{
+        text-align: center;
+    }
+
+    .sobre .infos .btn-saiba-mais{
+        align-self: center;
+    }
+}
+
+.servicos{
+    grid-area: servicos;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.servicos .servico{
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.servicos .servico:nth-child(1){
+    background-color: lightskyblue;
+}
+
+.servicos .servico:nth-child(2){
+    background-color: lightpink;
+}
+.servicos .servico img{
+    max-width: 250px;
+    margin-bottom: 30px;
+}
+
+.servicos .servico h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.servicos .servico p{
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 20px auto 0;
+    line-height: 25px;
+}
+
+@media(max-width: 425px){
+    .servicos{
+        grid-template-columns: 1fr;
+    }
+}
+
+.projetos{
+    grid-area: projetos;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projetos img{
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+.projetos img:hover{
+    opacity: 0.8;
+}
+
+@media(max-width: 768px){
+    .projetos{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media(max-width: 425px){
+    .projetos{
+        grid-template-columns: 1fr;
+    }
+}
+
+.rodape{
+    grid-area: rodape;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgreen;
+}
+
+.rodape h4{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.rodape nav{
+    margin: 50px 0;
+}
+
+.rodape nav ul{
+    display: flex;
+}
+
+.rodape nav ul li a{
+    margin: 20px;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.rodape nav ul li a:hover{
+    color: #fff;
+}
+
+.rodape .social a{
+    margin: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.rodape .social a:hover{
+    color: #fff;
+}
+
+.rodape .social a i{
+    font-size: 2rem;
+}
